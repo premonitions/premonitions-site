@@ -60,5 +60,6 @@ Rails.application.routes.draw do
   get '/auth/failure' => 'sessions#failure'
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/signin' => 'sessions#new', :as => :signin
+  root :to => redirect("/auth/twitter")
 
 end
