@@ -5,12 +5,12 @@ ruby '2.1.1'
 gem 'rails', '4.1.1'
 gem 'rake', '10.3.1'
 
-#gema para conexion a mongodb
+# ODM for MongoDB
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
+gem "omniauth-twitter"
+gem "figaro"    # key configuration using ENV
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -42,8 +42,6 @@ end
 
 #gem 'open-uri'
 gem 'json'
-#gem 'mongo', git: 'https://github.com/mongodb/mongo-ruby-driver'
-#gem "bson", "~> 2.0.0.rc3"
 gem 'activesupport', '4.1.1'
 
 
