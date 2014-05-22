@@ -1,0 +1,73 @@
+<%= form_for(@premonition) do |f| %>
+  <% if @premonition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@premonition.errors.count, "error") %> prohibited this premonition from being saved:</h2>
+
+      <ul>
+      <% @premonition.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :type_description %><br>
+    <%= f.text_field :type_description %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :location_user %><br>
+    <%= f.text_field :location_user %>
+  </div>
+  <div class="field">
+    <%= f.label :location_premonition %><br>
+    <%= f.text_field :location_premonition %>
+  </div>
+  <div class="field">
+    <%= f.label :premonition_come_true %><br>
+    <%= f.text_field :premonition_come_true %>
+  </div>
+  <div class="field">
+    <%= f.label :premonition_come_true_description %><br>
+    <%= f.text_field :premonition_come_true_description %>
+  </div>
+  <div class="field">
+    <%= f.label :someone_else %><br>
+    <%= f.text_field :someone_else %>
+  </div>
+  <div class="field">
+    <%= f.label :own_conclusions %><br>
+    <%= f.text_field :own_conclusions %>
+  </div>
+  <div class="field">
+    <%= f.label :more_premonitions %><br>
+    <%= f.text_field :more_premonitions %>
+  </div>
+  <div class="field">
+    <%= f.label :tags %><br>
+    <%= f.text_field :tags %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.number_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

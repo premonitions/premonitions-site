@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :premonitions
+
   root 'pages#home'
 
   resources :users
