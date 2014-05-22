@@ -10,6 +10,7 @@ gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 
 gem "omniauth-twitter"
+gem "omniauth-facebook"
 gem "figaro"    # key configuration using ENV
 
 # Use SCSS for stylesheets
