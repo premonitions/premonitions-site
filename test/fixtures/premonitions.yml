@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  date: MyString
+  type: 
+  type_description: MyString
+  description: MyString
+  location_user: MyString
+  location_premonition: MyString
+  premonition_come_true: MyString
+  premonition_come_true_description: MyString
+  someone_else: MyString
+  own_conclusions: MyString
+  more_premonitions: MyString
+  tags: MyString
+  status: 1
+
+two:
+  title: MyString
+  date: MyString
+  type: 
+  type_description: MyString
+  description: MyString
+  location_user: MyString
+  location_premonition: MyString
+  premonition_come_true: MyString
+  premonition_come_true_description: MyString
+  someone_else: MyString
+  own_conclusions: MyString
+  more_premonitions: MyString
+  tags: MyString
+  status: 1

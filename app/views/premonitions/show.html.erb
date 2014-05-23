@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @premonition.title %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @premonition.date %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @premonition.type %>
+</p>
+
+<p>
+  <strong>Type description:</strong>
+  <%= @premonition.type_description %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @premonition.description %>
+</p>
+
+<p>
+  <strong>Location user:</strong>
+  <%= @premonition.location_user %>
+</p>
+
+<p>
+  <strong>Location premonition:</strong>
+  <%= @premonition.location_premonition %>
+</p>
+
+<p>
+  <strong>Premonition come true:</strong>
+  <%= @premonition.premonition_come_true %>
+</p>
+
+<p>
+  <strong>Premonition come true description:</strong>
+  <%= @premonition.premonition_come_true_description %>
+</p>
+
+<p>
+  <strong>Someone else:</strong>
+  <%= @premonition.someone_else %>
+</p>
+
+<p>
+  <strong>Own conclusions:</strong>
+  <%= @premonition.own_conclusions %>
+</p>
+
+<p>
+  <strong>More premonitions:</strong>
+  <%= @premonition.more_premonitions %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @premonition.tags %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @premonition.status %>
+</p>
+
+<%= link_to 'Edit', edit_premonition_path(@premonition) %> |
+<%= link_to 'Back', premonitions_path %>
