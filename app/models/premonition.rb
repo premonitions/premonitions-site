@@ -6,12 +6,15 @@ class Premonition
   field :type_description, type: String
   field :description, type: String
   field :location_user, type: String
+  field :location_user_text, type: String  
   field :location_premonition, type: String
+  field :location_premonition_text, type: String
   field :premonition_come_true, type: String
   field :premonition_come_true_description, type: String
   field :someone_else, type: String
   field :own_conclusions, type: String
   field :more_premonitions, type: String
+  field :time_more_premonitions, type: String  
   field :tags, type: String
   field :status, type: Integer
 end
