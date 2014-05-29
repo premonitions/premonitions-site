@@ -17,4 +17,8 @@ class Premonition
   field :time_more_premonitions, type: String  
   field :tags, type: String
   field :status, type: Integer
+
+  validates_presence_of :title, :message => "Summarize is mandatory"
+  validates_presence_of :description, :message => "Description is mandatory"
+  validates_presence_of :date, :message => "Date date is mandatory"
 end

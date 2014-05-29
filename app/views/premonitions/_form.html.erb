@@ -1,3 +1,13 @@
+<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script> 
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<script>
+            $(document).ready(function(){
+                 $("#new_premonition").validate({
+                });
+            });
+</script>
+
 <%= form_for(@premonition) do |f| %>
   <% if @premonition.errors.any? %>
     <div id="error_explanation">
@@ -19,22 +29,27 @@
       </div>
   </div>
 
+  <script>
+                    $(function() {
+                        $( "#date" ).datepicker();
+                    });  
+  </script>
 
   <div class="container" style="background-color: #E0ECF8;">
 
           <fieldset>
            
             <div class="row" style="margin-top:30px">
-              <label for="inputTitle" class="col-lg-2 control-label">Summarize your premonition in one sentence</label>
+              <label for="inputTitle" class="col-lg-2 control-label">Summarize your premonition in one sentence <span class="divrojo">*</span></label>
               <div class="col-lg-10">
-                 <%= f.text_field :title, class: "form-control" %>
+                 <%= f.text_field :title, class: 'required form-control' %>
               </div>
             </div>
 
            <div class="row" style="margin-top:30px">
-              <label for="inputDateHappen" class="col-lg-2 control-label" >The date on which you premonition happened</label>
+              <label for="inputDateHappen" class="col-lg-2 control-label" >The date on which you premonition happened <span class="divrojo">*</span></label>
               <div class="col-lg-4">
-                 <%= f.text_field :date, class: "form-control" %>
+                 <%= f.text_field :date, class: 'required form-control', id: 'date' %>
             </div>
 
 
@@ -67,15 +82,15 @@
             <div class="row" style="margin-top:30px">
               <label for="textArea" class="col-lg-3 control-label">If premonition type is none of the answers of the above question, please give a brief description of the type of your premonition</label>
               <div class="col-lg-9">
-                    <%= f.text_area :type_description, class: "form-control", rows: "3" %>
+                    <%= f.text_area :type_description, class: 'form-control', rows: '3' %>
               </div>
             </div>
 
 
             <div class="row" style="margin-top:30px">
-              <label for="textArea" class="col-lg-3 control-label">Describe us in detail all the data on your premonition. Describing all your feelings and perceptions. In a perception through a vision in addition to the facts, any data can be important, the colors, if your feelings changed over the perception or if you were starring in that perception or if you were a spectator, for example. Any data can be very valuable</label>
+              <label for="textArea" class="col-lg-3 control-label">Describe us in detail all the data on your premonition. Describing all your feelings and perceptions. In a perception through a vision in addition to the facts, any data can be important, the colors, if your feelings changed over the perception or if you were starring in that perception or if you were a spectator, for example. Any data can be very valuable <span class="divrojo">*</span></label>
               <div class="col-lg-9">
-                  <%= f.text_area :description, class: "form-control", rows: "15" %>
+                  <%= f.text_area :description, class: 'required form-control', rows: '15' %>
               </div>
             </div>
 
@@ -192,25 +207,26 @@
                          
                     </div>
                     <div class="col-lg-5">
-                         <button class="btn btn-primary" type="submit">Submit</button>
+                         <button class="btn btn-primary" type="submit" >Submit</button>
                     </div>
 
             </div>
 
-            <script>
-                   $('#tags').tagsInput({
-                      // my parameters here
-                  });
-            </script>
-
-     
+                 
 
           </fieldset>
     </div>
 
 
 <% end %>
-
+                     <script>
+                                      $('#tags').tagsInput({
+                                          // my parameters here
+                                      });
+                                      $(function() {
+                                          $( "#date" ).datepicker();
+                                      });  
+                    </script>
 
                     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqjT3yR9w2D96HTvEfAdyf8N95MpOisH4&sensor=false"></script>
 
