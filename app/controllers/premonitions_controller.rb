@@ -24,7 +24,13 @@ class PremonitionsController < ApplicationController
   # POST /premonitions
   # POST /premonitions.json
   def create
-    @premonition = Premonition.new(premonition_params)
+    
+    @premonition_params = premonition_params
+    @premonition_params["status"] = 0 
+    @premonition_params["date"] = Date.strptime(@premonition_params["date"], '%m/%d/%Y').strftime('%Y%m%d')
+    @premonition_params["tags"] = @premonition_params["tags"].split(",")
+
+    @premonition = Premonition.new(@premonition_params)
 
     respond_to do |format|
       if @premonition.save

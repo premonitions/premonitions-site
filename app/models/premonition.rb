@@ -15,7 +15,7 @@ class Premonition
   field :own_conclusions, type: String
   field :more_premonitions, type: String
   field :time_more_premonitions, type: String  
-  field :tags, type: String
+  field :tags, type: Array
   field :status, type: Integer
 
   validates_presence_of :title, :message => "Summarize is mandatory"
