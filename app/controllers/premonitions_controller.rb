@@ -1,4 +1,5 @@
 class PremonitionsController < ApplicationController
+
   before_action :set_premonition, only: [:show, :edit, :update, :destroy]
 
   # GET /premonitions
@@ -29,6 +30,21 @@ class PremonitionsController < ApplicationController
     @premonition_params["status"] = 0 
     @premonition_params["date"] = Date.strptime(@premonition_params["date"], '%m/%d/%Y').strftime('%Y%m%d')
     @premonition_params["tags"] = @premonition_params["tags"].split(",")
+
+    sesionUserActive = session[:user_id]
+
+    if !sesionUserActive.nil?
+
+      if !sesionUserActive["$oid"].nil?
+        @premonition_params["user_id"] = sesionUserActive["$oid"].to_s
+        @premonition_params["status"] = 1 
+      else
+      @premonition_params["status"] = 0
+      end
+
+    else
+      @premonition_params["status"] = 0
+    end
 
     @premonition = Premonition.new(@premonition_params)
 
