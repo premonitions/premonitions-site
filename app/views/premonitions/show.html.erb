@@ -1,79 +1,73 @@
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><%= image_tag "unveiledfuture_logo.png"%></a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to 'Login with Twitter', '/auth/twitter' %>
+            </li>
+            <li>
+              <%= link_to 'Login with Facebook', '/auth/facebook' %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="jumbotron atom">
+      <div class="container">
+        <h1>Premonition report</h1>
+        <p>In this page you will able to send us a very detailed information about your Premonition.</p>        
+      </div>
+    </div>
+
+
 <p id="notice"><%= notice %></p>
+ <div class="container">
 
-<p>
-  <strong>Title:</strong>
-  <%= @premonition.title %>
-</p>
+          <fieldset>
+                  
 
-<p>
-  <strong>Date:</strong>
-  <%= @premonition.date %>
-</p>
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Thank you very much for your participation!</h3>
+                  </div>
+                  <div class="panel-body">
+                    In few days you will be able to see all premonitions which people has sent us, thank you again. Below a summary of your premonition.
+                  </div>
+                </div>
 
-<p>
-  <strong>Type:</strong>
-  <%= @premonition.type %>
-</p>
+           
+                <div class="row" style="margin-top:30px">
+                  <label for="inputTitle" class="col-lg-5 control-label">Summarize your premonition in one sentence <span class="divrojo">*</span></label>
+                  <div class="col-lg-7">
+                     <%= @premonition.title %>
+                  </div>
+                </div>
 
-<p>
-  <strong>Type description:</strong>
-  <%= @premonition.type_description %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @premonition.description %>
-</p>
+                <div class="row" style="margin-top:30px">
+                    <label for="textArea" class="col-lg-5 control-label">Describe us in detail all the data on your premonition. Describing all your feelings and perceptions. In a perception through a vision in addition to the facts, any data can be important, the colors, if your feelings changed over the perception or if you were starring in that perception or if you were a spectator, for example. Any data can be very valuable <span class="divrojo">*</span></label>
+                    <div class="col-lg-7">
+                         <%= @premonition.description %>
+                    </div>
+                </div>
+          </fieldset>
+  
+   <hr>
+          <footer>
+            <p>&copy; Company 2014</p>
+          </footer>
+  </div>
 
-<p>
-  <strong>Location user:</strong>
-  <%= @premonition.location_user %>
-</p>
 
-<p>
-  <strong>Location premonition:</strong>
-  <%= @premonition.location_premonition %>
-</p>
-
-<p>
-  <strong>Premonition come true:</strong>
-  <%= @premonition.premonition_come_true %>
-</p>
-
-<p>
-  <strong>Premonition come true description:</strong>
-  <%= @premonition.premonition_come_true_description %>
-</p>
-
-<p>
-  <strong>Someone else:</strong>
-  <%= @premonition.someone_else %>
-</p>
-
-<p>
-  <strong>Own conclusions:</strong>
-  <%= @premonition.own_conclusions %>
-</p>
-
-<p>
-  <strong>More premonitions:</strong>
-  <%= @premonition.more_premonitions %>
-</p>
-
-<p>
-  <strong>Tags:</strong>
-  <%= @premonition.tags %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @premonition.status %>
-</p>
-
-<p>
-  <strong>user_id:</strong>
-  <%= @premonition.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_premonition_path(@premonition) %> |
-<%= link_to 'Back', premonitions_path %>
+ 
