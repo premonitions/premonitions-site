@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
   resources :users
   resources :premonitions
+  get 'premonitions/:id(/:title)' => 'premonitions#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

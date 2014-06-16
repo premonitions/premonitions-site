@@ -25,8 +25,10 @@
 
     <div class="jumbotron atom">
       <div class="container">
-        <h1>Premonition report</h1>
-        <p>In this page you will able to send us a very detailed information about your Premonition.</p>        
+        <h1>Premonition report</h1>  
+           <blockquote>
+              <p>Detailed report</p>
+          </blockquote>
       </div>
     </div>
 
@@ -35,33 +37,268 @@
  <div class="container">
 
           <fieldset>
-                  
-
+                                  
                 <div class="panel panel-info">
-                  <div class="panel-heading">
-                    <h3 class="panel-title"><%= notice %> Thank you very much for your participation!</h3>
-                  </div>
-                  <div class="panel-body">
-                    In few days you will be able to see all premonitions which people has sent us, thank you again. Below a summary of your premonition.
-                  </div>
+                      <div class="panel-heading">
+                        <h3 class="panel-title">The premonition in one sentence</h3>
+                      </div>
+                      <div class="panel-body">
+                          <%= @premonition.title %>
+                      </div>
                 </div>
+
+                            
+
+                <div class="row" style="margin-top:30px">
+                       
+                        <div class="col-lg-4">                            
+                              <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                      <h3 class="panel-title">The date on which the premonition happened</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <%= format_date @premonition.date %>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <div class="col-lg-4">                            
+                              <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                      <h3 class="panel-title">Premonition type</h3>
+                                    </div>
+                                    <div class="panel-body"><%
+                                      unless @premonition.type.blank?
+                                            %><%= @premonition.type.capitalize %><%
+                                      end
+                                  %></div>
+                              </div>
+                        </div>
+
+                        <div class="col-lg-4">                            
+                              <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                      <h3 class="panel-title">Brief description of the type</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <%= @premonition.type_description %>
+                                    </div>
+                              </div>
+                        </div>
+
+                </div>
+
+              
+            <div class="panel panel-info">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Description in detail</h3>
+                      </div>
+                      <div class="panel-body">
+                          <%= @premonition.description.html_safe %>
+                      </div>
+            </div>
+            
+
+
+            <div class="row" style="margin-top:30px">
+
+                    <div class="col-lg-6 ">   
+                        <div class="panel panel-info">
+                              <div class="panel-heading">
+                                    <h3 class="panel-title">Location of the premonition author</h3>
+                              </div>
+                              <div class="panel-body">
+                                    <%= @premonition.location_user_description %>
+                              </div>       
+                              <div class="panel-body"><%
+                                  unless @premonition.location_user.blank?
+                                      %><div id="map-canvas" class="map-canvas"></div> <%
+                                  end
+                            %></div>
+                        </div>
+                    </div>
 
            
-                <div class="row" style="margin-top:30px">
-                  <label for="inputTitle" class="col-lg-5 control-label">Summarize your premonition in one sentence <span class="divrojo">*</span></label>
-                  <div class="col-lg-7">
-                     <%= @premonition.title %>
-                  </div>
-                </div>
-
-
-                <div class="row" style="margin-top:30px">
-                    <label for="textArea" class="col-lg-5 control-label">Describe us in detail all the data on your premonition. Describing all your feelings and perceptions. In a perception through a vision in addition to the facts, any data can be important, the colors, if your feelings changed over the perception or if you were starring in that perception or if you were a spectator, for example. Any data can be very valuable <span class="divrojo">*</span></label>
-                    <div class="col-lg-7">
-                         <%= @premonition.description %>
+                    <div class="col-lg-6"> 
+                          <div class="panel panel-info">
+                              <div class="panel-heading">
+                                    <h3 class="panel-title">Where the premonition happens</h3>
+                              </div>
+                              <div class="panel-body">
+                                     <%= @premonition.location_premonition_description %>  
+                              </div>       
+                              <div class="panel-body"><%
+                                  unless @premonition.location_premonition.blank?
+                                      %><div id="map-canvas2" class="map-canvas"></div><%
+                                  end
+                            %></div>
+                          </div>
                     </div>
-                </div>
+            </div>
+
+
+            <div class="row" style="margin-top:30px">
+
+                    <div class="col-lg-6 ">   
+                        <div class="panel panel-info">
+                              <div class="panel-heading">
+                                    <h3 class="panel-title">Was the premonition fulfilled?</h3>
+                              </div>
+                              <div class="panel-body"><%
+                                      unless @premonition.premonition_come_true.blank?
+                                            %><%= @premonition.premonition_come_true.capitalize %><%
+                                      end
+                            %></div>       
+                        </div>
+                    </div>
+
+           
+                    <div class="col-lg-6"> 
+                          <div class="panel panel-info">
+                              <div class="panel-heading">
+                                    <h3 class="panel-title">Precis last response (premonition fulfilled)</h3>
+                              </div>
+                              <div class="panel-body">
+                                    <%= @premonition.premonition_come_true_description %> 
+                              </div>       
+                          </div>
+                    </div>
+            </div>
+
+
+            <div class="row" style="margin-top:30px">
+
+                    <div class="col-lg-6 ">   
+                        <div class="panel panel-info">
+                              <div class="panel-heading">
+                                    <h3 class="panel-title">People who has had the same or similar premonition</h3>
+                              </div>
+                              <div class="panel-body">
+                                    <%= @premonition.someone_else %> 
+                              </div>       
+                        </div>
+                    </div>
+
+           
+                    <div class="col-lg-6"> 
+                          <div class="panel panel-info">
+                              <div class="panel-heading">
+                                    <h3 class="panel-title">Personal conclusions about the premonition</h3>
+                              </div>
+                              <div class="panel-body">
+                                    <%= @premonition.own_conclusions.html_safe %>   
+                              </div>       
+                          </div>
+                    </div>
+            </div>
+
+
+
+             <div class="row" style="margin-top:30px">
+
+                    <div class="col-lg-6 ">   
+                        <div class="panel panel-info">
+                              <div class="panel-heading">
+                                    <h3 class="panel-title">More premonitions of author</h3>
+                              </div>
+                              <div class="panel-body">
+                                   <%= @premonition.more_premonitions %>  
+                              </div>       
+                        </div>
+                    </div>
+
+           
+                    <div class="col-lg-6"> 
+                          <div class="panel panel-info">
+                              <div class="panel-heading">
+                                    <h3 class="panel-title">How often author usually have them</h3>
+                              </div>
+                              <div class="panel-body">
+                                     <%= @premonition.time_more_premonitions %>  
+                              </div>       
+                          </div>
+                    </div>
+            </div>
+
+
+            <div class="panel panel-info">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Tags that summarize the premonition</h3>
+                      </div>
+                      <div class="panel-body"><%
+                      unless @premonition.type.blank?
+                            tags_cont = 0
+                            @premonition.tags.each do |tags|
+                                if tags_cont != 0
+                                   %>, <%
+                                end
+                                %><%=tags%><%
+
+                                tags_cont+= 1
+                            end
+                      end
+                    %></div>
+            </div>
+
           </fieldset>
+
+          <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqjT3yR9w2D96HTvEfAdyf8N95MpOisH4&sensor=false" data-turbolinks-track></script>
+
+
+          <script>
+                                var myLatlng,mapOptions,map,marker;
+
+                        <%
+                          unless @premonition.location_user.blank?
+                                %>
+
+                                myLatlng = new google.maps.LatLng(<%=(@premonition.location_user).split(",")[1]%>,<%=(@premonition.location_user).split(",")[0]%>);
+                                mapOptions = {
+                                  zoom: 6,
+                                  center: myLatlng
+                                }
+                                map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+                                // To add the marker to the map, use the 'map' property
+                                marker = new google.maps.Marker({
+                                    position: myLatlng,
+                                    map: map,
+                                    title:"<%=@premonition.location_user_description%>"
+                                });
+                                marker.setMap(map);
+
+
+
+                        <%
+
+
+                          end
+
+                          unless @premonition.location_premonition.blank?
+                                %>
+
+                                myLatlng = new google.maps.LatLng(<%=(@premonition.location_premonition).split(",")[1]%>,<%=(@premonition.location_premonition).split(",")[0]%>);
+                                mapOptions = {
+                                  zoom: 6,
+                                  center: myLatlng
+                                }
+                                map = new google.maps.Map(document.getElementById("map-canvas2"), mapOptions);
+                      
+                                // To add the marker to the map, use the 'map' property
+                                marker = new google.maps.Marker({
+                                    position: myLatlng,
+                                    map: map,
+                                    title:"<%=@premonition.location_premonition_description%>"
+                                });
+                                marker.setMap(map);
+
+
+                        <%
+                          end
+                                %>
+
+
+          </script>
   
    <hr>
           <footer>

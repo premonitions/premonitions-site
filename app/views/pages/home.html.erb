@@ -65,7 +65,7 @@
         <div class="col-md-4" itemscope itemtype="http://schema.org/WebPageElement">
           <h2 itemprop="headline">Precognition Cases</h2>
           <p>From <strong>Eleanor Sidgwick</strong> and <strong>Herbert Saltmarsh</strong> to the current date, here you will find many cases of precognition.</p>
-          <p><a class="btn btn-default" href="#" role="button" id="attach_box2">View details &raquo;</a></p>
+          <p><%= link_to "View details » ", {controller: "premonitions", action: "index"}, class: "btn btn-default", role: "button", 'data-no-turbolink' => true %></p>
        </div>
         <div class="col-md-4" itemscope itemtype="http://schema.org/WebPageElement">
           <h2 itemprop="headline">Find People like YOU</h2>

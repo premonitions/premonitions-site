@@ -79,3 +79,23 @@ div {
     font: 155% Arial,Helvetica,sans-serif;
     margin-bottom: 30px;
 }
+
+table a { 
+    color: #18bc9c;
+    text-decoration: none;
+    font-weight: bold;
+    &:hover {
+       color: #61707F;
+       background-color: transparent;
+    }
+}
+
+.table a { 
+    color: #18bc9c;
+    text-decoration: none;
+    font-weight: bold;
+    &:hover {
+       color: #61707F;
+       background-color: transparent;
+    }
+}
