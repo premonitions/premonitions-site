@@ -35,12 +35,14 @@
 
 
  <div class="container">
+     
+          <fieldset itemscope itemtype="http://schema.org/Article">
+             <article>   
+                <meta itemprop="articleSection" content="UFO Sightings">
 
-          <fieldset>
-                                  
                 <div class="panel panel-info">
                       <div class="panel-heading">
-                        <h3 class="panel-title">The premonition in one sentence</h3>
+                        <header><h3 class="panel-title">The premonition in one sentence</h3></header>
                       </div>
                       <div class="panel-body">
                           <%= @premonition.title %>
@@ -56,7 +58,7 @@
                                     <div class="panel-heading">
                                       <h3 class="panel-title">The date on which the premonition happened</h3>
                                     </div>
-                                    <div class="panel-body">
+                                    <div class="panel-body" itemprop="dateCreated">
                                         <%= format_date @premonition.date %>
                                     </div>
                               </div>
@@ -67,7 +69,7 @@
                                     <div class="panel-heading">
                                       <h3 class="panel-title">Premonition type</h3>
                                     </div>
-                                    <div class="panel-body"><%
+                                    <div class="panel-body" itemprop="articleSection"><%
                                       unless @premonition.type.blank?
                                             %><%= @premonition.type.capitalize %><%
                                       end
@@ -91,9 +93,9 @@
               
             <div class="panel panel-info">
                       <div class="panel-heading">
-                        <h3 class="panel-title">Description in detail</h3>
+                        <h3 class="panel-title" >Description in detail</h3>
                       </div>
-                      <div class="panel-body">
+                      <div class="panel-body" itemprop="articleBody">
                           <%= @premonition.description.html_safe %>
                       </div>
             </div>
@@ -124,7 +126,7 @@
                               <div class="panel-heading">
                                     <h3 class="panel-title">Where the premonition happens</h3>
                               </div>
-                              <div class="panel-body">
+                              <div class="panel-body" itemprop="contentLocation">
                                      <%= @premonition.location_premonition_description %>  
                               </div>       
                               <div class="panel-body"><%
@@ -225,7 +227,7 @@
                       <div class="panel-heading">
                         <h3 class="panel-title">Tags that summarize the premonition</h3>
                       </div>
-                      <div class="panel-body"><%
+                      <div class="panel-body" itemprop="keywords"><%
                       unless @premonition.type.blank?
                             tags_cont = 0
                             @premonition.tags.each do |tags|
@@ -240,7 +242,8 @@
                     %></div>
             </div>
 
-          </fieldset>
+          </article>
+        </fieldset>
 
           <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqjT3yR9w2D96HTvEfAdyf8N95MpOisH4&sensor=false" data-turbolinks-track></script>
 
