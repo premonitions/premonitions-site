@@ -1,16 +1,24 @@
 class PremonitionsController < ApplicationController
 
-  before_action :set_premonition, only: [:show]
+  include PremonitionsHelper
+
+   before_action :set_premonition, only: [:show]
   # [:show, :edit, :update, :destroy]
+
   # GET /premonitions
   # GET /premonitions.json
-  #def index
-   # @premonitions = Premonition.all
-  #end
+  def index
+   @premonition = Premonition.all.desc(:date)
+  end
 
   # GET /premonitions/1
   # GET /premonitions/1.json
   def show
+      @premonition = Premonition.find(params[:id])
+  end
+
+  def search
+    
   end
 
   # GET /premonitions/new
@@ -50,8 +58,8 @@ class PremonitionsController < ApplicationController
 
     respond_to do |format|
       if @premonition.save
-        format.html { redirect_to @premonition, notice: 'Premonition was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @premonition }
+        format.html { render action: 'search', notice: 'Premonition was successfully created.', premonition: @premonition }
+        format.json { render action: 'search', status: :created, location: @premonition }
       else
         format.html { render action: 'new' }
         format.json { render json: @premonition.errors, status: :unprocessable_entity }
@@ -91,6 +99,6 @@ class PremonitionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def premonition_params
-      params.require(:premonition).permit(:title, :date, :type, :type_description, :description, :location_user, :location_premonition, :premonition_come_true, :premonition_come_true_description, :someone_else, :own_conclusions, :more_premonitions, :tags, :status)
+      params.require(:premonition).permit(:title, :date, :type, :type_description, :description, :location_user, :location_user_description, :location_premonition, :location_premonition_description, :premonition_come_true, :premonition_come_true_description, :someone_else, :own_conclusions, :more_premonitions, :time_more_premonitions, :tags, :status)
     end
 end

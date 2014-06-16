@@ -1,51 +1,77 @@
-<h1>Listing premonitions</h1>
+ <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.unveiledfuture.com/"><%= image_tag "unveiledfuture_logo.png"%></a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to 'Login with Twitter', '/auth/twitter' %>
+            </li>
+            <li>
+              <%= link_to 'Login with Facebook', '/auth/facebook' %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Type</th>
-      <th>Type description</th>
-      <th>Description</th>
-      <th>Location user</th>
-      <th>Location premonition</th>
-      <th>Premonition come true</th>
-      <th>Premonition come true description</th>
-      <th>Someone else</th>
-      <th>Own conclusions</th>
-      <th>More premonitions</th>
-      <th>Tags</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @premonitions.each do |premonition| %>
-      <tr>
-        <td><%= premonition.title %></td>
-        <td><%= premonition.date %></td>
-        <td><%= premonition.type %></td>
-        <td><%= premonition.type_description %></td>
-        <td><%= premonition.description %></td>
-        <td><%= premonition.location_user %></td>
-        <td><%= premonition.location_premonition %></td>
-        <td><%= premonition.premonition_come_true %></td>
-        <td><%= premonition.premonition_come_true_description %></td>
-        <td><%= premonition.someone_else %></td>
-        <td><%= premonition.own_conclusions %></td>
-        <td><%= premonition.more_premonitions %></td>
-        <td><%= premonition.tags %></td>
-        <td><%= premonition.status %></td>
-        <td><%= link_to 'Show', premonition %></td>
-        <td><%= link_to 'Edit', edit_premonition_path(premonition) %></td>
-        <td><%= link_to 'Destroy', premonition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="jumbotron atom">
+      <div class="container">
+        <h1>Premonition report</h1>  
+          <blockquote>
+              <p>Premonitions Database List</p>
+          </blockquote>
+      </div>
+    </div>
 
-<br>
 
-<%= link_to 'New Premonition', new_premonition_path %>
+
+    <div class="container">
+
+          <table class="table table-striped table-hover ">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Premonition date</th>
+                <th>The premonition in one sentence</th>
+                <th>Description summary</th>
+              </tr>
+            </thead>
+            <tbody><% 
+                  list_cont = 1
+                  @premonition.each do |premonition| %>
+                    <tr>
+                      <td><%=list_cont%></td>
+                      <td><%
+                        unless premonition.date.blank?                                
+                                %><%= format_date premonition.date %><%
+                        else
+                                %><%= premonition.date_not_format %><%
+                        end                        
+                        %>
+                      </td>
+                      <td><%= link_to premonition.title, {:controller => "premonitions", :action => "show", :id => premonition.id, :title => friendly_title(premonition)}, 'data-no-turbolink' => true%></td>
+                      
+                      <td><%= premonition.description.html_safe[0, 60] %> ...</td>
+                    </tr><%
+                    list_cont += 1
+                  end %>
+            </tbody>
+          </table> 
+     </div>
+
+    <div class="container">
+   <hr>
+          <footer>
+            <p>&copy; Unveiled Future 2014</p>
+          </footer>
+  </div>
+
