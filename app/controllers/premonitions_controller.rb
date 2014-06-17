@@ -8,7 +8,7 @@ class PremonitionsController < ApplicationController
   # GET /premonitions
   # GET /premonitions.json
   def index
-   @premonition = Premonition.all.desc(:date)
+   @premonition = Premonition.all.desc(:date) 
   end
 
   # GET /premonitions/1

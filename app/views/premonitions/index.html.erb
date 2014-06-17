@@ -34,9 +34,9 @@
 
 
 
-    <div class="container">
-
-          <table class="table table-striped table-hover ">
+    <div class="container" itemscope itemtype="http://schema.org/ItemList">
+          <meta itemprop="itemListOrder" content="Descending"/>
+          <table class="table table-striped table-hover" item active>
             <thead>
               <tr>
                 <th></th>
@@ -48,9 +48,9 @@
             <tbody><% 
                   list_cont = 1
                   @premonition.each do |premonition| %>
-                    <tr>
+                    <tr itemprop="itemListElement" itemscope itemtype="http://schema.org/Article">
                       <td><%=list_cont%></td>
-                      <td><%
+                      <td itemprop="dateCreated"><%
                         unless premonition.date.blank?                                
                                 %><%= format_date premonition.date %><%
                         else
@@ -58,20 +58,20 @@
                         end                        
                         %>
                       </td>
-                      <td><%= link_to premonition.title, {:controller => "premonitions", :action => "show", :id => premonition.id, :title => friendly_title(premonition)}, 'data-no-turbolink' => true%></td>
+                      <td itemprop="name"><%= link_to premonition.title, {:controller => "premonitions", :action => "show", :id => premonition.id, :title => friendly_title(premonition)}, 'data-no-turbolink' => true%></td>
                       
-                      <td><%= premonition.description.html_safe[0, 60] %> ...</td>
+                      <td itemprop="headline"><%= premonition.description.html_safe[0, 60] %> ...</td>
                     </tr><%
                     list_cont += 1
                   end %>
             </tbody>
           </table> 
-     </div>
+    </div>
 
     <div class="container">
-   <hr>
+            <hr>
           <footer>
             <p>&copy; Unveiled Future 2014</p>
           </footer>
-  </div>
+    </div>
 
