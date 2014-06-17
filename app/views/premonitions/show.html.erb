@@ -10,12 +10,18 @@
           <a class="navbar-brand" href="http://www.unveiledfuture.com/"><%= image_tag "unveiledfuture_logo.png"%></a>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
             <li>
-              <%= link_to 'Login with Twitter', '/auth/twitter' %>
+                <%= link_to "Share your Vision", {controller: "premonitions", action: "new"}, role: "button", 'data-no-turbolink' => true, 'itemprop' => "url" %>
+            </li>
+            <li> 
+                <%= link_to "Premonitions Database List", {controller: "premonitions", action: "index"}, role: "button", 'data-no-turbolink' => true, 'itemprop' => "url" %>
             </li>
             <li>
-              <%= link_to 'Login with Facebook', '/auth/facebook' %>
+              <%= link_to(raw("<div itemprop='name'>Login with Twitter</div>"), '/auth/twitter', itemprop: "url") %>
+            </li>
+            <li>
+              <%= link_to(raw("<div itemprop='name'>Login with Facebook</div>"), '/auth/facebook', itemprop: "url") %>
             </li>
           </ul>
         </div>
@@ -38,7 +44,7 @@
      
           <fieldset itemscope itemtype="http://schema.org/Article">
              <article>   
-                <meta itemprop="articleSection" content="UFO Sightings">
+                <meta itemprop="articleSection" content="Premonition">
 
                 <div class="panel panel-info">
                       <div class="panel-heading">
@@ -305,7 +311,7 @@
   
    <hr>
           <footer>
-             <p>&copy; Unveiled Future Company 2014</p>
+             <p>&copy; Unveiled Future 2014</p>
           </footer>
   </div>
 
