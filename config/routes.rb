@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :premonitions
   get 'premonitions/:id(/:title)' => 'premonitions#show'
   get 'belief' => 'premonitions#belief'
+  get 'about' => 'premonitions#about'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

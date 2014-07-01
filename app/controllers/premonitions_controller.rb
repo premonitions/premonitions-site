@@ -25,6 +25,10 @@ class PremonitionsController < ApplicationController
     
   end
 
+  def about
+    
+  end
+
   # GET /premonitions/new
   def new
     @premonition = Premonition.new
