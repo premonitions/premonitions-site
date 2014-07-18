@@ -1,19 +1,59 @@
-<p id="notice"><%= notice %></p>
+ <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <header itemscope itemtype="http://schema.org/WPHeader">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.unveiledfuture.com/" itemprop="url">
+            <img src="http://res.cloudinary.com/dr3vzmqaf/image/upload/v1405633756/reported_date_20140717/unveiledfuture_logo222_fl4krg.png"/>
+            </a>
+            <%#= image_tag "unveiledfuture_logo.png", itemprop: "image"%></a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav navbar-right" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+            <li>
+                <%= link_to "Share your Vision", {controller: "premonitions", action: "new"}, role: "button", 'data-no-turbolink' => true, 'itemprop' => "url" %>
+            </li>
+            <li> 
+                <%= link_to "Premonitions Database List", {controller: "premonitions", action: "index"}, role: "button", 'data-no-turbolink' => true, 'itemprop' => "url" %>
+            </li>
+            <li> 
+                <%= link_to "About", {controller: "premonitions", action: "about"}, role: "button", 'itemprop' => "url" %>
+            </li>
+            <li>
+            	<%= link_to(raw("<div itemprop='name'>Login with Twitter</div>"), '/auth/twitter', itemprop: "url") %>
+            </li>
+            <li>
+            	<%= link_to(raw("<div itemprop='name'>Login with Facebook</div>"), '/auth/facebook', itemprop: "url") %>
+            </li>
+          </ul>
+        </div>
+        </header>
+      </div>
+    </div>
 
-<p>
-  <strong>Provider:</strong>
-  <%= @user.provider %>
-</p>
+     <div class="jumbotron atom">
+      <div class="container" itemscope itemtype="http://schema.org/WebPageElement">
+        <h1 itemprop="headline">Premonition</h1>
+        <blockquote itemprop="citation">
+        <p>Sign in!!</p>
+        <small>Precognition definition from <cite title="Wikipedia" itemprop="creator">Wikipedia</cite></small>
+        </blockquote>
+        <p>
+          <%= link_to "Learn more » ", {controller: "premonitions",action: "belief"}, class: "btn btn-primary btn-lg", role: "button"%></p>
+      </div>
 
-<p>
-  <strong>Uid:</strong>
-  <%= @user.uid %>
-</p>
+      
+    </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <div class="container">
+	  <footer itemscope itemtype="http://schema.org/WPFooter">
+        <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+          <p itemprop="name">&copy; Unveiled Future 2014</p>
+        </span>
+      </footer>
+    </div>
