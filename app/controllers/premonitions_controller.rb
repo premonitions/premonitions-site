@@ -20,6 +20,7 @@ class PremonitionsController < ApplicationController
   # GET /premonitions/1.json
   def show
       @premonition = Premonition.find(params[:id])
+       @title = @premonition.title + " "
   end
 
   def search
