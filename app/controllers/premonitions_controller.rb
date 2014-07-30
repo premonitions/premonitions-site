@@ -9,6 +9,7 @@ class PremonitionsController < ApplicationController
   # GET /premonitions.json
   def index
       @premonition = Premonition.all.desc(:date) 
+      @title = "Database List - "
   end
 
   def belief
@@ -22,16 +23,17 @@ class PremonitionsController < ApplicationController
   end
 
   def search
-    
+     
   end
 
   def about
-    
+      @title = "About - "
   end
 
   # GET /premonitions/new
   def new
     @premonition = Premonition.new
+    @title = "Share your Vision - "
   end
 
   # GET /premonitions/1/edit
