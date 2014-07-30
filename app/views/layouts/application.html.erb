@@ -13,7 +13,7 @@
   <meta property="og:image" content="http://www.unveiledfuture.com/assets/unveiledfuture_logo-3773bcb060053c2020842b7b1fde3cdc.png" />
   <meta property="og:locale" content="en_US" />
 
-  <title>Premonitions, precognitions, visions all over the world - Unveiled Future</title>
+  <title><% unless @title.blank? %><%=@title%><% end %>Premonitions, precognitions, visions all over the world - Unveiled Future</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
