@@ -1,12 +1,8 @@
 development:
   sessions:
     default:
-      database: premonitions2015
-      hosts:
-        - ds055812.mongolab.com:55812
-      username: premonitions
-      password: joseypaco
-        # Change the default write concern. (default = { w: 1 })  
+        uri: <%= ENV['MONGOLAB_URI'] %>
+        # Change the default write concern. (default = { w: 1 })
         # write:
         # w: 1
 
@@ -34,7 +30,7 @@ development:
     # inheritance. (default: false)
     # preload_models: false
 
-    # Protect id and type from mass assignment. (default: true)
+    # Protect id and type from mass assignment. (default: true) 
     # protect_sensitive_fields: true
 
     # Raise an error when performing a #find and the document is not found.
@@ -63,12 +59,8 @@ test:
         max_retries: 1
         retry_interval: 0
 
-production:
+production:   
   sessions:
     default:
-      database: premonitions2015
-      hosts:
-        - ds055812.mongolab.com:55812
-      username: premonitions
-      password: joseypaco
+        uri: <%= ENV['MONGOLAB_URI'] %>
 
