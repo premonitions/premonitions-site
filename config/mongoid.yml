@@ -1,16 +1,11 @@
 development:
-  # Configure available database sessions. (required)
   sessions:
-    # Defines the default session. (required)
     default:
-      # Defines the name of the default database that Mongoid can connect to.
-      # (required).
-      database: premonitions
-      # Provides the hosts the default session can connect to. Must be an array
-      # of host:port pairs. (required)
+      database: premonitions2015
       hosts:
-        - localhost:27017
-      options:
+        - ds055812.mongolab.com:55812
+      username: premonitions
+      password: joseypaco
         # Change the default write concern. (default = { w: 1 })
         # write:
         # w: 1
@@ -73,7 +68,7 @@ production:
     default:
       database: premonitions2015
       hosts:
-        - <%= ENV['OPENSHIFT_MONGODB_DB_HOST'] || 'localhost' %>:<%= ENV['OPENSHIFT_MONGODB_DB_PORT'] || 27017 %>
-      username: <%= ENV['OPENSHIFT_MONGODB_DB_USERNAME'] %>
-      password: <%= ENV['OPENSHIFT_MONGODB_DB_PASSWORD'] %>
+        - ds055812.mongolab.com:55812
+      username: premonitions
+      password: joseypaco
 
