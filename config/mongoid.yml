@@ -68,8 +68,12 @@ test:
         max_retries: 1
         retry_interval: 0
 
-production:   
+production:
   sessions:
     default:
-        uri: <%= ENV['OPENSHIFT_NOSQL_DB_URL'] %>
+      database: premonitions2015
+      hosts:
+        - <%= ENV['OPENSHIFT_MONGODB_DB_HOST'] || 'localhost' %>:<%= ENV['OPENSHIFT_MONGODB_DB_PORT'] || 27017 %>
+      username: <%= ENV['OPENSHIFT_MONGODB_DB_USERNAME'] %>
+      password: <%= ENV['OPENSHIFT_MONGODB_DB_PASSWORD'] %>
 
