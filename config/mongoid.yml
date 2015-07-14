@@ -71,5 +71,5 @@ test:
 production:   
   sessions:
     default:
-        uri: <%= ENV['MONGOHQ_URL'] %>
+        uri: <%= ENV['OPENSHIFT_NOSQL_DB_MONGOHQ_URL'] %>
 
