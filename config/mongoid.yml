@@ -137,4 +137,4 @@ test:
 production:   
   sessions:
     default:
-        uri: <%= ENV['OPENSHIFT_MONGODB_DB_URL'] %>
+        uri: <%= ENV['OPENSHIFT_MONGODB_DB_URL'] %><%= ENV['OPENSHIFT_APP_NAME'] %>
