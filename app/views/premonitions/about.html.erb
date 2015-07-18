@@ -1,0 +1,99 @@
+ <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.unveiledfuture.com/"><%= image_tag "unveiledfuture_logo.png"%></a>
+        </div>
+       <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav navbar-right" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+            <li>
+                <%= link_to "Share your Vision", {controller: "premonitions", action: "new"}, role: "button", 'data-no-turbolink' => true, 'itemprop' => "url" %>
+            </li>
+            <li> 
+                <%= link_to "Premonitions Database List", {controller: "premonitions", action: "index"}, role: "button", 'data-no-turbolink' => true, 'itemprop' => "url" %>
+            </li>
+             <li> 
+                <%= link_to "About", {controller: "premonitions", action: "about"}, role: "button", 'itemprop' => "url" %>
+            </li>
+            <li>
+              <%= link_to(raw("<div itemprop='name'>Login with Twitter</div>"), '/auth/twitter', itemprop: "url") %>
+            </li>
+            <li>
+              <%= link_to(raw("<div itemprop='name'>Login with Facebook</div>"), '/auth/facebook', itemprop: "url") %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="jumbotron atom">
+      <div class="container">
+        <h1>Premonition report</h1>  
+          <blockquote itemprop="citation">
+              <p><strong>Precognition</strong>, also called <strong>future sight</strong>, and <strong>second sight</strong>, is a type of <strong>extrasensory perception</strong> that would involve the acquisition or effect of future information that cannot be deducted from presently available and normally acquired sense-based information.</p>
+              <small>Precognition definition from <cite itemprop="creator" title="Wikipedia">Wikipedia</cite></small>
+          </blockquote>
+      </div>
+    </div>
+
+    <div class="container">
+           <div class="row" style="margin-top:30px">
+                <div class="col-lg-12">                  
+                  <div itemscope itemtype="http://schema.org/Article">
+                    <article> 
+                    <meta itemprop="articleSection" content="Premonition"> 
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title"><p class="lead" itemprop="name">About our goals</p></h4>
+                            </div>
+
+                            <div class="modal-body" itemprop="articleBody">
+                              
+                              <p><strong>Behind this premonitions site </strong> there are two learners scientists and our motivation is knowing the people experience in this field because we have the certainty that in this field are not all coincidences, and behind one premonition there are scientific and biologics facts.</p>
+                              <p>1 - Opening and spreading all premonitions data around the world.</p>
+                              <p>2 - We want to study this data, we want to responses. We hope to obtain lots of data and this way we could do a data analysis.</p>
+                            </div>
+                         
+                        </div>
+                      </article>  
+                  </div>                      
+                </div>
+           </div>   
+          <div class="row" style="margin-top:30px">
+                <div class="col-lg-6">   
+                       <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h3 class="panel-title">You can send us your premonition through this form</h3>
+                          </div>
+                          <div class="panel-body">
+                            <%= link_to "Share your Vision", {controller: "premonitions", action: "new"}, role: "button", 'data-no-turbolink' => true, 'itemprop' => "url", :class => "btn btn-default" %>
+                          </div>
+                        </div>
+                </div>
+                <div class="col-lg-6"> 
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h3 class="panel-title">If you want to send any other information you can do it to this email</h3>
+                          </div>
+                          <div class="panel-body">
+                            <a role="button" href="mailto:unveiledfuture@gmail.com" class="btn btn-default">unveiledfuture@gmail.com</a>
+                          </div>
+                        </div>  
+                </div>  
+          </div>   
+    </div>
+    
+
+    <div class="container">
+            <hr>
+          <footer>
+            <p>&copy; Unveiled Future 2014</p>
+          </footer>
+    </div>
+

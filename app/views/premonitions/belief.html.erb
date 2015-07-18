@@ -1,0 +1,179 @@
+ <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.unveiledfuture.com/"><%= image_tag "unveiledfuture_logo.png"%></a>
+        </div>
+       <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav navbar-right" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+            <li>
+                <%= link_to "Share your Vision", {controller: "premonitions", action: "new"}, role: "button", 'data-no-turbolink' => true, 'itemprop' => "url" %>
+            </li>
+            <li> 
+                <%= link_to "Premonitions Database List", {controller: "premonitions", action: "index"}, role: "button", 'data-no-turbolink' => true, 'itemprop' => "url" %>
+            </li>
+             <li> 
+                <%= link_to "About", {controller: "premonitions", action: "about"}, role: "button", 'itemprop' => "url" %>
+            </li>
+            <li>
+              <%= link_to(raw("<div itemprop='name'>Login with Twitter</div>"), '/auth/twitter', itemprop: "url") %>
+            </li>
+            <li>
+              <%= link_to(raw("<div itemprop='name'>Login with Facebook</div>"), '/auth/facebook', itemprop: "url") %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="jumbotron atom">
+      <div class="container">
+        <h1>Premonition report</h1>  
+          <blockquote itemprop="citation">
+              <p><strong>Precognition</strong>, also called <strong>future sight</strong>, and <strong>second sight</strong>, is a type of <strong>extrasensory perception</strong> that would involve the acquisition or effect of future information that cannot be deducted from presently available and normally acquired sense-based information.</p>
+              <small>Precognition definition from <cite itemprop="creator" title="Wikipedia">Wikipedia</cite></small>
+          </blockquote>
+      </div>
+    </div>
+
+    <div class="container">
+           <div class="row" style="margin-top:30px">
+                <div class="col-lg-12">                  
+                  <div itemscope itemtype="http://schema.org/Article">
+                    <article> 
+                    <meta itemprop="articleSection" content="Premonition"> 
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title"><p class="lead" itemprop="name">10 Things You Need to Know About Premonitions by Larry Dossey</p></h4>
+                            </div>
+
+                            <div class="modal-body" itemprop="articleBody">
+                              <p><strong>1. Premonitions are extremely common.</strong>  They probably arose early in our evolutionary history because they provided our ancestors with a greater likelihood of survival and procreation.  They were thus likely to have been incorporated into their genes and passed down through succeeding generations.  As a result, we now appear to be hardwired for premonitions.  They have become our birthright, part of our original equipment.</p>
+                            </div>
+
+                            <div class="modal-body" itemprop="articleBody">
+                              <p><strong>2.  Premonition means literally “a forewarning,”</strong> indicating that they often announce upcoming events that are unpleasant — e.g., a health crisis or a natural disaster.  This is not absolute, however; premonitions may also foretell pleasing events such as a job promotion, the location of a parking spot, or even winning lottery numbers.
+                              </p>
+                            </div>
+
+                             <div class="modal-body" itemprop="articleBody">
+                              <p><strong>3.  Premonitions can be realistic or symbolic.</strong> They occur commonly during dreams, but also during full, waking awareness. 
+                              </p>
+                            </div>
+
+                             <div class="modal-body" itemprop="articleBody">
+                              <p><strong>4. Five rules of thumb aid us in knowing which premonitions to take seriously:</strong>   (1) if the premonition warns of a health crisis or death; (2) if the premonition is numinous, highly vivid, or “realer than real”;  (3) if a dream is recurrent, appearing often in the same night or in succeeding nights, as if clamoring for attention; (4) if the premonition is associated with physical symptoms; or (5) if the premonition is experienced independently by a spouse, partner, lover, or close friend.
+                              </p>
+                            </div>
+
+                             <div class="modal-body" itemprop="articleBody">
+                              <p><strong>5. There are four categories of scientific evidence for premonitions:</strong>   (1) presentiment experiments, in which the body responds to a future event prior to one’s conscious awareness of it;  (2) precognitive remote viewing tests, in which a distant individual “gets” information from a sender up to a week before it is mentally sent; (3) online tests of precognitive functioning, and (4) global consciousness effects that are detected by random event generators stationed around the earth, which often react prior to the occurrence of a subsequent happening.
+                              </p>
+                            </div>
+
+                             <div class="modal-body" itemprop="articleBody">
+                              <p><strong>6.  Premonitions alert us to impending problems and crises of those we love.</strong>  These warnings are extremely common between parents and children, spouses, siblings (particularly identical twins), close friends, and lovers.  Empathy, love, compassion and a sense of oneness mediate premonitions.
+                              </p>
+                            </div>
+
+                             <div class="modal-body" itemprop="articleBody">
+                              <p><strong>7. Although we cannot have premonitions on demand,</strong> we can invite them into our lives by setting the stage for them, so they are more likely to occur.  We can become more premonition-prone.
+                              </p>
+                            </div>
+
+                             <div class="modal-body" itemprop="articleBody">
+                              <p><strong>8.  The most effective way to become more premonition prone</strong> is to develop a discipline wherein we quiet our mind and attend to the subtle messages from within and without — through meditation, contemplation, immersion in nature, or just “getting quiet.”  Courting mystery also helps.  As Rumi said, “Sell your cleverness and buy bewilderment.”
+                              </p>
+                            </div>
+
+                             <div class="modal-body" itemprop="articleBody">
+                              <p><strong>9.  Keep a dream diary, in which you record your dreams on waking.</strong>  This makes premonitions more likely to occur and insures that they will be remembered.
+                              </p>
+                            </div>
+
+                             <div class="modal-body" itemprop="articleBody">
+                              <p><strong>10. Premonitions are an indicator of the soul and a bridge to the transcendent.</strong>  Their value goes beyond their practical benefit of warning us of upcoming dangers.  They reveal the presence of a timeless aspect of our consciousness, and therefore point like an arrow to an immortal, eternal aspect of who we are.
+                              </p>
+                            </div>
+
+                            <div class="modal-footer" itemprop="creator">
+                             <p><strong>Source: </strong>&nbsp;<a role="button" class="btn btn-default" href="http://www.newrealities.com/index.php/book-reviews/item/703-10-things-you-need-to-know-about-premonitions-by-larry-dossey-md">http://www.newrealities.com</a></p>
+                            </div>
+                        </div>
+                      </article>  
+                  </div>                      
+                </div>
+           </div>
+
+
+           <div class="row" style="margin-top:30px">
+                <div class="col-lg-12">                  
+                    <div itemscope itemtype="http://schema.org/Article">
+                      <article>  
+                        <meta itemprop="articleSection" content="Premonition">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title"><p class="lead" itemprop="name">The Power Of Premonitions: How Knowing The Future Can Shape Our Lives by Larry Dossey</p></h4>
+                            </div>
+
+                            <div class="modal-body" itemprop="articleBody">
+                              <p>On Friday, October 21, 1966, a mountain of coal waste, perched above the Welsh mining village of Aberfan(near Merthyr Tydfil, South Wales), broke loose and came flowing down uncontrollably.</p><p>
+                              Destabilised by recent rains, a river of black coal sludge, water and boulders bore down on Aberfan. It steamrollered over a tiny cottage halfway down the slope, thundered through Pantglas Junior School, obliterated a further 20 houses - then finally came to rest.</p><p>
+                              A total of 144 people, including many children, were crushed or suffocated to death in one of Britain's most horrific peacetime tragedies.</p> 
+                              <p>Every life lost was precious. But the death of 116 innocent children, killed in the school, tore at the very heart of the nation. In a cruel irony, the youngsters had been making their way back to their classrooms after singing All Things Bright And Beautiful at morning assembly when the disaster struck.</p><p>
+                              No one in the close-knit community was unaffected by the tragedy and the bereaved parents would never recover from their loss.</p><p>
+                              But for one family, the overriding grief was even more acute. For one of those killed  -  ten-year-old Eryl Mai Jones  -  had not only predicted the catastrophe, but had warned her mother of it, too.</p><p>
+                              In the days leading up to the atrocity, Eryl had told her mother she was 'not afraid to die'. 'I shall be with Peter and June,' she added.</p><p>
+                              Eryl's busy mother offered her imaginative daughter a lollipop and thought no more about it. Then, on October 20, the day before the disaster, Eryl said to her mother: 'Let me tell you about my dream last night. I dreamt I went to school and there was no school there. Something black had come down all over it!'</p><p>
+                              The next day, Eryl's horrific premonition came to pass and she was killed alongside schoolfriends Peter and June. They were buried side-by-side in a mass grave, just as the youngster had predicted.</p>
+                              <p>You can only guess at the torment Eryl's mother must have suffered - perhaps berating herself for not keeping her child off school or warning everyone in the village.</p>
+                              <p>Tales like this, of horrific events 'seen' in dreams, litter history. And now a comprehensive new book by medical doctor Larry Dossey - who has himself experienced premonitory dreams  -  collates some of the most extraordinary examples.</p>
+                            </div>
+
+                            <div class="modal-body" itemprop="articleBody">
+                              <p><strong>SEPTEMBER 11TH</strong></p>
+                              <p>The terrorist atrocities of September 11, 2001 were preceded by a slew of premonitions. A week before the attack, one North Carolina mother dreamt about spinning into blackness and heard a man's voice repeating '2,830, 2,830' and a name she couldn't make out.</p><p>
+                              'It sounded like Rooks or Horooks,' she said. Disturbed by the dream, the woman cancelled tickets the family had to fly to Disneyland on September 11, despite protestations from her husband that she was over-reacting.</p><p>
+                              When news emerged on September 11 of the planes flying into New York's Twin Towers - with another hitting the Pentagon and a fourth crashing into a field in Pennsylvania - the woman's caution was vindicated.
+                              </p>
+                              <p>Most bizarrely, 2,830 - the number repeated over and over in her dream&nbsp; -&nbsp; was the confirmed tally of deaths at that time. And the name - 'Rooks or Horooks?' - was that of Michael Horrocks, first officer of United Airlines flight 175, which crashed into the South Tower. </p><p>Of course, her vision was not specific enough for her to have done anything to avert the tragedy, but it was nonetheless disturbing - as was the experience of another woman holidaying in Washington DC two weeks before the atrocity. </p><p>She was dozing in a car as her husband drove. But when she opened her eyes, she had a vision of the Pentagon with huge billows of thick black smoke pouring from it. </p><p>She screamed, slammed her hands on the dashboard and became so hysterical that she hyperventilated. </p><p>The woman had had visions all her life, but was traumatised by this one. Two weeks later, American Airlines flight 77 slammed into the Pentagon, killing 184 people, and causing clouds of thick black smoke, exactly as she had dreamt it. </p>
+
+                              <p>In an even more chilling example, World Trade Centre employee Lawrence Boisseau had a dream in September that the towers were crashing down around him. A few days later, his wife dreamt the streets of Manhattan were littered with debris. </p><p>The images were not specific enough to prevent Boisseau from going to work on September 11 - and he perished there. But not before helping to rescue several children stuck in a care centre on the ground floor. <br></p><p>Sometimes, premonitions allow the person to pinpoint a specific time and place, leaving the dreamer enough time to alter the course of the disaster. </p><p>In one such instance, Dossey recounts the tale of a mother living in Washington State who awoke at 2.30am from a nightmare. She had dreamt that a large chandelier that hung above her baby's crib had fallen and crushed him. </p><p>In the dream, a violent storm was raging and the time on the clock read 4.35am. Alarmed, the woman woke up, went into the next room and took the baby back to her bed. </p><p>Two hours later, the couple were woken by a loud crash. They dashed into their child's room to find the crib demolished by the chandelier, which had fallen directly onto it. </p><p>In a further twist, a storm was raging - and the time on the clock read 4.35am. </p><p>Not all of those who dream of future events manage to interpret them correctly. Indeed, one of the common features of premonitions is that they are often fragmentary and vague. </p><p>But Dossey believes we all have the ability to predict the future and points to studies by Dean Radin, a Californian researcher. Radin sat subjects in front of a blank computer screen and told them an image would appear in five seconds. </p><p>Remarkably, before the image appeared, the subjects would become more agitated if the image was of something grisly or upsetting than if it was of something pleasant. It seems the subjects could sense what they were about to be confronted with. </p><p>This is supported by data from train and plane accidents. One famous study from the Fifties found that trains involved in accidents often had fewer passengers than the same service the week before. </p><p>The theory is that commuters have some sense of an approaching accident and alter their travel plans.</p>
+
+
+                            </div>
+
+                            <div class="modal-body" itemprop="articleBody">
+                              <p><strong>THE TITANIC</strong></p>
+                              <p>When the Titanic made her first - and last&nbsp; -&nbsp; voyage in 1912, many passengers had a sense of foreboding. J. P. Morgan, one of the richest men in the world, cancelled his passage at the last minute because of a hunch. </p><p>Interestingly, the vacancy rate on all four flights that crashed on September 11, 2001, was high. </p>
+
+                              <p>On the Boeing 757 that crashed into the Pentagon, only 64 of 289 seats were taken. </p><p>Meanwhile, the planes that crashed into the World Trade Centre's North and South Towers were 74 and 81 per cent empty. </p><p>Indeed, the occupancy rate of all four doomed planes that day was a mere 21 per cent&nbsp; - despite being commuter services. </p><p>Dossey's explanation for humans' ability to predict the future is rooted in evolution. He says it makes sense that we would develop our ability to see impending dangers and take appropriate measures. </p><p>'From the standpoint of evolutionary biology, the ability to bypass the physical senses is the sort of ability that an intelligent, survival-oriented organism might sooner or later develop.' </p><p>Furthermore, he believes we are more likely to have premonitions about those to whom we are emotionally attached. </p><p>Through history, neurologists have proved a telepathic connection between some particularly close individuals, such as twins. One of the most common forms of premonition is forewarning of illness in a loved one. </p><p>In November 2007, the 12-day-old twins of Hollywood actor Dennis Quaid and his wife Kimberly were admitted to hospital in LA with suspected bacterial infections, for which routine antibiotics were administered. </p>
+
+                              <p>On the second day of the twins' hospitalisation, the exhausted Quaids returned home for a few hours' rest. </p><p>But at 9pm Kimberly awoke with a sense that something was terribly wrong. </p><p>'I just had this horrible feeling come over me, and I felt like the babies were passing. I just had this feeling of dread,' she said. </p><p>So disturbed was she that she jotted down the time: 'Nine pm. Something happened to babies.' Yet when Quaid phoned the hospital he was told they were fine. </p><p>In fact, they were not. The babies had been given a massive overdose of an anti-clotting drug, which resulted in them spending 11 days in intensive care before finally recovering. </p><p>But this sixth sense is not confined to humans. There are countless examples of apparent premonitions among animals. </p><p>Just before the Boxing Day tsunami of 2004, flamingoes on India's southern coast fled, monkeys at Sri Lanka's Yala National Park stopped accepting bananas from tourists and a elephants began to trumpet. </p><p>In one tale recounted by Dossey, a woman was driving her car with her cat on the back seat. The cat became increasingly agitated, before jumping into the front and biting the woman, forcing her to stop. </p><p>At just that moment, a large tree crashed onto the road, just a few yards ahead of the woman. If she had continued driving, she would have been killed. </p><p>Coincidence? Or proof of something more mysterious at work? Dossey, and others like him, believe it is the latter. </p><p>What's more, he thinks our only hope of utilising the power of prediction effectively is to act immediately and not let embarrassment get in the way. </p><p>He cautions: 'If premonitions are to aid survival, we cannot afford the luxury of thinking about them.'</p>
+
+                            </div>
+                            
+                            <div class="modal-footer" itemprop="creator">
+                              <p><strong>Source: </strong>&nbsp;<a role="button" class="btn btn-default" href="http://www.dailymail.co.uk/femail/article-1218401/Yes-sixth-sense-The-depth-study-intriguing-dreams-convinced-doctor.html" data-no-turbolink="true">http://www.dailymail.co.uk/ (SARAH CHALMERS)</a></p>
+                            </div>
+                        </div>
+                      </article>  
+                  </div>                      
+                </div>
+           </div>
+    </div>
+    
+
+    <div class="container">
+            <hr>
+          <footer>
+            <p>&copy; Unveiled Future 2014</p>
+          </footer>
+    </div>
+

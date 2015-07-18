@@ -1,0 +1,381 @@
+<script>
+            $(document).ready(function(){
+                 $("#new_premonition").validate({
+                });
+            });
+</script>
+
+<%= form_for(@premonition) do |f| %>
+  <% if @premonition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@premonition.errors.count, "error") %> prohibited this premonition from being saved:</h2>
+
+      <ul>
+      <% @premonition.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="jumbotron atom">
+      <div class="container">
+        <h1>Premonition report</h1>
+        <p>In this page you will able to send us a very detailed information about your Premonition.</p>        
+      </div>
+  </div>
+
+  <script>
+                    $(function() {
+                        $( "#date" ).datepicker();
+                    });  
+  </script>
+
+  <div class="container" style="background-color: #E0ECF8;">
+
+          <fieldset>
+           
+            <div class="row" style="margin-top:30px">
+              <label for="inputTitle" class="col-lg-2 control-label">Summarize your premonition in one sentence <span class="divrojo">*</span></label>
+              <div class="col-lg-10">
+                 <%= f.text_field :title, class: 'required form-control' %>
+              </div>
+            </div>
+
+           <div class="row" style="margin-top:30px">
+              <label for="inputDateHappen" class="col-lg-2 control-label" >The date on which you premonition happened <span class="divrojo">*</span></label>
+              <div class="col-lg-4">
+                 <%= f.text_field :date, class: 'required form-control', id: 'date' %>
+            </div>
+
+
+            <label class="col-lg-2" style="margin-top:10px">Premonition type</label>
+              <div class="col-lg-4">
+                <div class="radio">
+                  <label>
+                         <%= f.radio_button :type, 'visions' %> Through visions
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                          <%= f.radio_button :type, 'hearings' %> Through hearings
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                          <%= f.radio_button :type, 'feelings' %> Through feelings
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                          <%= f.radio_button :type, 'dreams' %> Through dreams
+                  </label>
+                </div>
+              </div>
+            </div>
+
+         
+            <div class="row" style="margin-top:30px">
+              <label for="textArea" class="col-lg-3 control-label">If premonition type is none of the answers of the above question, please give a brief description of the type of your premonition</label>
+              <div class="col-lg-9">
+                    <%= f.text_area :type_description, class: 'form-control', rows: '3' %>
+              </div>
+            </div>
+
+
+            <div class="row" style="margin-top:30px">
+              <label for="textArea" class="col-lg-3 control-label">Describe us in detail all the data on your premonition. Describing all your feelings and perceptions. In a perception through a vision in addition to the facts, any data can be important, the colors, if your feelings changed over the perception or if you were starring in that perception or if you were a spectator, for example. Any data can be very valuable <span class="divrojo">*</span></label>
+              <div class="col-lg-9">
+                  <%= f.text_area :description, class: 'required form-control', rows: '15' %>
+              </div>
+            </div>
+
+
+            
+
+
+            <div class="row" style="margin-top:30px">
+                  <label for="inputDateHappen" class="col-lg-5 control-label">Where were you when you had the premonition?, you must locate on the map where you were when you had the premonition, no need be the exact location. It might be worth the city and the country.  
+                    <br><br>
+                      <div class="input-group">
+                          <%= f.text_field :location_user_description, class: "form-control", id: "report_location" %>
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" onclick="javascript:codeAddress();">Find location</button>
+                          </span>
+                      </div>
+                    <br><br>
+                    
+                    <%= f.hidden_field :location_user, class: "form-control", id: "report_coord" %>
+                    <span class="help-block">(fill the location text field, click the button "Find location" and you could drag the icon with the mouse in map google to selected location more exact.)</span>
+                  </label>                
+
+                  <div class="col-lg-7">   
+                    <div id="map-canvas" class="map-canvas"></div>                        
+                  </div>
+
+            </div>
+
+           
+            <div class="row" style="margin-top:30px">
+                  <label for="inputDateHappen" class="col-lg-5 control-label">Where does your premonition happens?, If your premonition happens somewhere, locate your premonition on this map.  
+                    <br><br>
+                      <div class="input-group">
+                          <%= f.text_field :location_premonition_description, class: "form-control", id: "report_location2" %>
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" onclick="javascript:codeAddress2();">Find location</button>
+                          </span>
+                      </div>
+                    <br><br>
+                    
+                    <%= f.hidden_field :location_premonition, class: "form-control", id: "report_coord2" %>
+                    <span class="help-block">(fill the location text field, click the button "Find location" and you could drag the icon with the mouse in map google to selected location more exact.)</span>
+                  </label>                
+
+                  <div class="col-lg-7">   
+                    <div id="map-canvas2" class="map-canvas"></div>                        
+                  </div>
+
+            </div>
+
+
+            <div class="row" style="margin-top:30px">
+                    <label class="col-lg-2" >Was your premonition fulfilled?</label>
+                    <div class="col-lg-3" >
+                      <div class="radio">
+                        <label>
+                             <%= f.radio_button :premonition_come_true, 'yes' %> Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                             <%= f.radio_button :premonition_come_true, 'no' %> No
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                             <%= f.radio_button :premonition_come_true, 'dontknow' %> Don't know
+                        </label>
+                      </div>
+                    </div>
+
+                    <label for="textArea" class="col-lg-2 control-label">Extends this last response (premonition fulfilled), if you want to do it</label>
+                    <div class="col-lg-5">
+                        <%= f.text_area :premonition_come_true_description, class: "form-control", rows: "8" %>
+                    </div>
+            </div>
+
+
+
+
+
+            <div class="row" style="margin-top:30px">
+                    <label for="textArea" class="col-lg-2 control-label">Do you know someone who has had your same or similar premonition?.</label>
+                    <div class="col-lg-3">
+                        <%= f.text_area :someone_else, class: "form-control", rows: "10" %>
+                    </div>
+
+                    <label for="textArea" class="col-lg-2 control-label">Personal conclusions about your personal premonition. Was it positive?, did it  change your life?, Do you think in your premonitions when you do choices in your daily life?. Describe how your premonition has been important to you in your life.</label>
+                    <div class="col-lg-5">
+                        <%= f.text_area :own_conclusions, class: "form-control", rows: "10" %>                        
+                    </div>
+            </div>
+
+
+            <div class="row" style="margin-top:30px">
+                    <label for="textArea" class="col-lg-2 control-label">Have you had more premonitions?, If so let us know if it is related to the premonition that describes us.</label>
+                    <div class="col-lg-3">
+                        <%= f.text_area :more_premonitions, class: "form-control", rows: "10" %>
+                    </div>
+
+                    <label for="textArea" class="col-lg-2 control-label">If you would have had more than one premonition. How often do you usually have them?.</label>
+                    <div class="col-lg-5">
+                        <%= f.text_area :time_more_premonitions, class: "form-control", rows: "10" %>                        
+                    </div>
+            </div>
+
+
+            <div class="row" style="margin-top:30px">
+                    <label for="textArea" class="col-lg-2 control-label">Write words (tags) that summarize your premonition. <span class="help-block">(press the "Enter" key after each word)</span></label>
+                    <div class="col-lg-3">
+                        <%= f.text_area :tags, class: "form-control", rows: "10", id: "tags" %>
+                    </div>
+                    <div class="col-lg-2">
+                         
+                    </div>
+                    <div class="col-lg-5">
+                         <button class="btn btn-primary" type="submit" >Submit</button>
+                    </div>
+
+            </div>
+
+          </fieldset>
+
+
+    </div>
+
+    <div class="container">
+   <hr>
+          <footer>
+            <p>&copy; Unveiled Future 2014</p>
+          </footer>
+  </div>
+
+
+<% end %>
+                     <script>
+                                      $('#tags').tagsInput({
+                                          // my parameters here
+                                      });
+                                      $(function() {
+                                          $( "#date" ).datepicker();
+                                      });  
+                    </script>
+
+                    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqjT3yR9w2D96HTvEfAdyf8N95MpOisH4&sensor=false" data-turbolinks-track></script>
+
+
+                    <script>
+                                var geocoder;
+                                var map;
+                                var marker;
+                                var mapOptions;
+
+                                //var $latitude = document.getElementById('latitude');
+                                //var $longitude = document.getElementById('longitude');
+                                var $coord = document.getElementById('report_coord');
+
+                                function initialize() {
+                                  geocoder = new google.maps.Geocoder();
+                                  var latlng = new google.maps.LatLng(34.16473667601063, -40.57035354999999);
+                                  mapOptions = {
+                                    zoom: 3,
+                                    center: latlng,
+                                    position: [34.16473667601063, -40.57035354999999],
+                                    scrollwheel: true,
+                                    zoomControl: true,
+                                    scaleControl: true,
+                                    streetViewControl: true,
+                                    overviewMapControl: true
+                                  }
+                                  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                                }
+
+
+
+                                function codeAddress() {
+
+
+                                  geocoder = new google.maps.Geocoder();
+                                  mapOptions = {
+                                    zoom: 8
+                                  }
+                                  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+                                  var address = document.getElementById('report_location').value;
+                                  geocoder.geocode( { 'address': address}, function(results, status) {
+                                    if (status == google.maps.GeocoderStatus.OK) {
+                                      map.setCenter(results[0].geometry.location);
+                                      marker = new google.maps.Marker({
+                                          map: map,
+                                          position: results[0].geometry.location,
+                                          animation: google.maps.Animation.DROP,
+                                          draggable: true
+                                      });
+
+                                      
+                                      //$latitude.value = results[0].geometry.location.lat();
+                                      //$longitude.value = results[0].geometry.location.lng();
+                                      
+
+                                      $coord.value =  results[0].geometry.location.lng() + "," + results[0].geometry.location.lat() ;
+
+                                      google.maps.event.addListener(marker, 'dragend', function(marker){
+                                            var latLng = marker.latLng;
+                                            //$latitude.value = latLng.lat();
+                                            //$longitude.value = latLng.lng();
+                                            $coord.value =  latLng.lng() + "," + latLng.lat() ;
+                                      });
+                                      // populate yor box/field with lat, lng
+                                      
+                                    } else {
+                                      alert('Geocode was not successful for the following reason: ' + status);
+                                    }
+                                  });
+                                }
+
+
+                                google.maps.event.addDomListener(window, 'load', initialize);
+                    </script>  
+                    <script>
+                                var geocoder;
+                                var map;
+                                var marker;
+                                var mapOptions;
+
+                                //var $latitude = document.getElementById('latitude');
+                                //var $longitude = document.getElementById('longitude');
+                                var $coord2 = document.getElementById('report_coord2');
+
+                                function initialize2() {
+                                  geocoder = new google.maps.Geocoder();
+                                  var latlng = new google.maps.LatLng(34.16473667601063, -40.57035354999999);
+                                  mapOptions = {
+                                    zoom: 3,
+                                    center: latlng,
+                                    position: [34.16473667601063, -40.57035354999999],
+                                    scrollwheel: true,
+                                    zoomControl: true,
+                                    scaleControl: true,
+                                    streetViewControl: true,
+                                    overviewMapControl: true
+                                  }
+                                  map = new google.maps.Map(document.getElementById('map-canvas2'), mapOptions);
+                                }
+
+
+
+                                function codeAddress2() {
+
+
+                                  geocoder = new google.maps.Geocoder();
+                                  mapOptions = {
+                                    zoom: 8
+                                  }
+                                  map = new google.maps.Map(document.getElementById('map-canvas2'), mapOptions);
+
+                                  var address = document.getElementById('report_location2').value;
+                                  geocoder.geocode( { 'address': address}, function(results, status) {
+                                    if (status == google.maps.GeocoderStatus.OK) {
+                                      map.setCenter(results[0].geometry.location);
+                                      marker = new google.maps.Marker({
+                                          map: map,
+                                          position: results[0].geometry.location,
+                                          animation: google.maps.Animation.DROP,
+                                          draggable: true
+                                      });
+
+                                      
+                                      //$latitude.value = results[0].geometry.location.lat();
+                                      //$longitude.value = results[0].geometry.location.lng();
+                                      
+
+                                      $coord2.value =  results[0].geometry.location.lng() + "," + results[0].geometry.location.lat() ;
+
+                                      google.maps.event.addListener(marker, 'dragend', function(marker){
+                                            var latLng = marker.latLng;
+                                            //$latitude.value = latLng.lat();
+                                            //$longitude.value = latLng.lng();
+                                            $coord2.value =  latLng.lng() + "," + latLng.lat() ;
+                                      });
+                                      // populate yor box/field with lat, lng
+                                      
+                                    } else {
+                                      alert('Geocode was not successful for the following reason: ' + status);
+                                    }
+                                  });
+                                }
+
+
+                                google.maps.event.addDomListener(window, 'load', initialize2);
+                    </script>     
