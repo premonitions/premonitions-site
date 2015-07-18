@@ -141,8 +141,8 @@ production:
       hosts:
         - 127.3.65.130:27017
       options:
-        user: 'admin'
-        password: 'YbNQsrt87ytB'
-        read:
-          mode: primary
-        max_pool_size: 1
+        user: '<%= ENV['OPENSHIFT_MONGODB_DB_USERNAME'] %>'
+        password: '<%= ENV['OPENSHIFT_MONGODB_DB_PASSWORD'] %>'
+        #read:
+          #mode: primary
+        #max_pool_size: 1
