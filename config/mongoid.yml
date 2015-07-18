@@ -134,7 +134,15 @@ test:
           mode: primary
         max_pool_size: 1
 
-production:   
-  sessions:
+production:
+  clients:
     default:
-        uri: <%= ENV['OPENSHIFT_MONGODB_DB_URL'] %><%= ENV['OPENSHIFT_APP_NAME'] %>
+      database: pmn2015
+      hosts:
+        - 127.3.65.130:27017
+      options:
+        user: 'admin'
+        password: 'YbNQsrt87ytB'
+        read:
+          mode: primary
+        max_pool_size: 1
