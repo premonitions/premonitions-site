@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
 
 
   root 'pages#home'
+=======
+  
+  root 'pages#home'
+
+>>>>>>> aaf230b137def9c1fe6b29a1d0c110e30e996aa4
   
   resources :users
   resources :premonitions
@@ -9,6 +15,7 @@ Rails.application.routes.draw do
   get 'belief' => 'premonitions#belief'
   get 'about' => 'premonitions#about'
 
+<<<<<<< HEAD
   get '/auth/:provider/callback' => 'sessions#create'
   #get '/auth/:provider/callback', to: 'sessions#create'
 
@@ -18,6 +25,9 @@ Rails.application.routes.draw do
 
 
   
+=======
+
+>>>>>>> aaf230b137def9c1fe6b29a1d0c110e30e996aa4
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -73,8 +83,16 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
+<<<<<<< HEAD
 
  
+=======
+  get '/auth/:provider/callback' => 'sessions#create'
+  get '/auth/failure' => 'sessions#failure'
+  get '/signout' => 'sessions#destroy', :as => :signout
+  get '/signin' => 'sessions#new', :as => :signin
+
+>>>>>>> aaf230b137def9c1fe6b29a1d0c110e30e996aa4
 
 
 end

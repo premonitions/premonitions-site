@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 == README
 
 This README would normally document whatever steps are necessary to get the
@@ -26,3 +27,9 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+=======
+== Premonitions Site 
+
+This site provides the essential information about premonitions all over the world. 
+
+>>>>>>> aaf230b137def9c1fe6b29a1d0c110e30e996aa4
