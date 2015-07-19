@@ -57,7 +57,7 @@ namespace :premonitions_task do
 
 			    	description = report_premonition["description"][0..70].gsub(".","")
 			    	
-			  	    title +=  strip_tags(description)
+			  	    title =  strip_tags(description)
 			        title += "...\" #premonitions"
 			        print title
 
