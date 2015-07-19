@@ -60,7 +60,7 @@ namespace :premonitions_task do
 			    	
 			  	    title +=  strip_tags(description)
 			        title += "...\" #premonitions"
-			        #print title
+			        print title
 
 					title_url = "http://www.unveiledfuture.com/premonitions/" 
 					title_url += report_premonition["_id"].to_s
