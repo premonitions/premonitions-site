@@ -52,8 +52,7 @@ namespace :premonitions_task do
 		  	            
 		        if random==contador
 
-			    	title = strip_tags("\"")     
-
+			    	
 			    	#print report_premonition["description"][0..70]
 
 			    	description = report_premonition["description"][0..70].gsub(".","")
