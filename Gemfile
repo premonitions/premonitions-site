@@ -56,3 +56,14 @@ gem 'less-rails'
 gem 'json'
 gem 'activesupport'#, '4.1.1'
 
+#Whenever is a Ruby gem that provides a clear syntax for writing and deploying cron jobs.
+gem 'whenever', :require => false
+
+#tasks gem
+
+gem 'mongo'
+gem 'twitter' 
+gem 'multi_json' 
+gem 'shorturl'
+gem 'bson'
+
