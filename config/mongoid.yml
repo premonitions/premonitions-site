@@ -1,5 +1,4 @@
 development:
-<<<<<<< HEAD
   # Configure available database clients. (required)
   clients:
     # Defines the default client. (required)
@@ -8,23 +7,12 @@ development:
       # (required).
       database: pmn2015_development
       # Provides the hosts the default client can connect to. Must be an array
-=======
-  # Configure available database sessions. (required)
-  sessions:
-    # Defines the default session. (required)
-    default:
-      # Defines the name of the default database that Mongoid can connect to.
-      # (required).
-      database: premonitions
-      # Provides the hosts the default session can connect to. Must be an array
->>>>>>> aaf230b137def9c1fe6b29a1d0c110e30e996aa4
       # of host:port pairs. (required)
       hosts:
         - localhost:27017
       options:
         # Change the default write concern. (default = { w: 1 })
         # write:
-<<<<<<< HEAD
         #   w: 1
 
         # Change the default read preference. Valid options for mode are: :secondary,
@@ -107,66 +95,31 @@ development:
 
         # The file containing a set of concatenated certification authority certifications
         # used to validate certs passed from the other end of the connection.
-        # ssl_ca_cert: /path/to/ca.cert
-
-
-=======
-        # w: 1
-
-        # Change the default consistency model to primary, secondary.
-        # 'secondary' will send reads to secondaries, 'primary' sends everything
-        # to master. (default: primary)
-        # read: secondary_preferred
-
-        # How many times Moped should attempt to retry an operation after
-        # failure. (default: 30)
-        # max_retries: 30
-
-        # The time in seconds that Moped should wait before retrying an
-        # operation on failure. (default: 1)
-        # retry_interval: 1
->>>>>>> aaf230b137def9c1fe6b29a1d0c110e30e996aa4
-  # Configure Mongoid specific options. (optional)
+        # ssl_ca_cert: /path/to/ca.cert  # Configure Mongoid specific options. (optional)
   options:
     # Includes the root model name in json serialization. (default: false)
     # include_root_in_json: false
 
-<<<<<<< HEAD
-    # Include the _type field in serialization. (default: false)
-=======
     # Include the _type field in serializaion. (default: false)
->>>>>>> aaf230b137def9c1fe6b29a1d0c110e30e996aa4
     # include_type_for_serialization: false
 
     # Preload all models in development, needed when models use
     # inheritance. (default: false)
     # preload_models: false
 
-<<<<<<< HEAD
-=======
     # Protect id and type from mass assignment. (default: true)
     # protect_sensitive_fields: true
-
->>>>>>> aaf230b137def9c1fe6b29a1d0c110e30e996aa4
-    # Raise an error when performing a #find and the document is not found.
-    # (default: true)
-    # raise_not_found_error: true
-
     # Raise an error when defining a scope with the same name as an
     # existing method. (default: false)
     # scope_overwrite_exception: false
 
     # Use Active Support's time zone in conversions. (default: true)
-<<<<<<< HEAD
-    # use_activesupport_time_zone: truefsfdsf
-=======
+
     # use_activesupport_time_zone: true
->>>>>>> aaf230b137def9c1fe6b29a1d0c110e30e996aa4
 
     # Ensure all times are UTC in the app side. (default: false)
     # use_utc: false
 test:
-<<<<<<< HEAD
   clients:
     default:
       database: pmn2015_test
@@ -188,23 +141,4 @@ production:
         password: '<%= ENV['OPENSHIFT_MONGODB_DB_PASSWORD'] %>'
         #read:
           #mode: primary
-        #max_pool_size: 1
-=======
-  sessions:
-    default:
-      database: premonitions
-      hosts:
-        - localhost:27017
-      options:
-        read: primary
-        # In the test environment we lower the retries and retry interval to
-        # low amounts for fast failures.
-        max_retries: 1
-        retry_interval: 0
-
-production:   
-  sessions:
-    default:
-        uri: <%= ENV['MONGOHQ_URL'] %>
-
->>>>>>> aaf230b137def9c1fe6b29a1d0c110e30e996aa4
+        #max_pool_size: 

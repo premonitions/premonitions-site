@@ -1,27 +1,15 @@
 #!/usr/bin/env ruby
 
-<<<<<<< HEAD
-# This file loads spring without using Bundler, in order to be fast.
-# It gets overwritten when you run the `spring binstub` command.
-=======
 # This file loads spring without using Bundler, in order to be fast
 # It gets overwritten when you run the `spring binstub` command
->>>>>>> aaf230b137def9c1fe6b29a1d0c110e30e996aa4
 
 unless defined?(Spring)
   require "rubygems"
   require "bundler"
 
-<<<<<<< HEAD
   if match = Bundler.default_lockfile.read.match(/^GEM$.*?^    (?:  )*spring \((.*?)\)$.*?^$/m)
     Gem.paths = { "GEM_PATH" => [Bundler.bundle_path.to_s, *Gem.path].uniq }
-=======
-  if match = Bundler.default_lockfile.read.match(/^GEM$.*?^    spring \((.*?)\)$.*?^$/m)
-    ENV["GEM_PATH"] = ([Bundler.bundle_path.to_s] + Gem.path).join(File::PATH_SEPARATOR)
-    ENV["GEM_HOME"] = ""
-    Gem.paths = ENV
 
->>>>>>> aaf230b137def9c1fe6b29a1d0c110e30e996aa4
     gem "spring", match[1]
     require "spring/binstub"
   end
