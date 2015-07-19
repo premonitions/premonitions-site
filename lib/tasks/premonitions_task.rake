@@ -32,7 +32,7 @@ namespace :premonitions_task do
 		#client = Mongoid.load!(Rails.root.join("/config/mongoid.yml", :development)) #Mongo::MongoClient.from_uri("mongodb://unveiledfuture:joseypaco@oceanic.mongohq.com:10057/app25219600")
 		#client = Mongoid.load!("config/mongoid.yml")     
 
-		db = Mongo::Client.new([ '127.3.65.130:27017' ], :database => 'pmn2015', :user => '<%= ENV['OPENSHIFT_MONGODB_DB_USERNAME'] %>', :password => '<%= ENV['OPENSHIFT_MONGODB_DB_PASSWORD'] %>')
+		db = Mongo::Client.new([ '127.3.65.130:27017' ], :database => 'pmn2015', :user => 'ENV['OPENSHIFT_MONGODB_DB_USERNAME']', :password => 'ENV['OPENSHIFT_MONGODB_DB_PASSWORD']')
 
 
 		#db = client.db("premonitions")
