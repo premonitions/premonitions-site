@@ -20,6 +20,6 @@
 # Learn more: http://github.com/javan/whenever
 
 
-every 2.hours do
+every :hour do
   rake "premonitions_task:send_tweet"
 end
