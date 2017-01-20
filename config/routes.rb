@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   
   root 'pages#home'
 
@@ -8,6 +9,13 @@ Rails.application.routes.draw do
   get 'premonitions/:id(/:title)' => 'premonitions#show'
   get 'belief' => 'premonitions#belief'
   get 'about' => 'premonitions#about'
+
+  get '/auth/:provider/callback' => 'sessions#create'
+  #get '/auth/:provider/callback', to: 'sessions#create'
+
+  get '/auth/failure' => 'sessions#failure'
+  get '/signout' => 'sessions#destroy', :as => :signout
+  get '/signin' => 'sessions#new', :as => :signin
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -64,12 +72,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  get '/auth/:provider/callback' => 'sessions#create'
-  get '/auth/failure' => 'sessions#failure'
-  get '/signout' => 'sessions#destroy', :as => :signout
-  get '/signin' => 'sessions#new', :as => :signin
-
 
 
 end
