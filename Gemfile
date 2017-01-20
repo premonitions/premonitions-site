@@ -57,3 +57,7 @@ gem 'activesupport', '4.1.1'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :production do
+  gem 'rails_12factor'
+end
