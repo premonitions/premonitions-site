@@ -1,0 +1,3 @@
+export
+
+declare -x MONGOLAB_URI="mongodb://premonitions:joseypaco@ds047812.mongolab.com:47812/openshift_2h8359qo_oq85us3m"

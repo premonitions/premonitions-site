@@ -6,7 +6,9 @@ gem 'rails', '4.2.1'
 gem 'rake'
 
 # ODM for MongoDB
-gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'  
+# gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
+gem 'mongoid', '~> 5.0'
+
 gem 'bson_ext'
 
 # Use SCSS for stylesheets
@@ -67,3 +69,7 @@ gem 'multi_json'
 gem 'shorturl'
 gem 'bson'
 
+
+group :production do
+  gem 'rails_12factor'
+end
