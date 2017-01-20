@@ -6,7 +6,8 @@ gem 'rails', '4.1.1'
 gem 'rake', '10.3.1'
 
 # ODM for MongoDB
-gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
+# gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
+gem 'mongoid', '~> 5.0'
 gem 'bson_ext'
 
 gem "omniauth-twitter"
